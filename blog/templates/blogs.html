@@ -1,0 +1,37 @@
+{% extends "layout.html" %}
+
+{% block title %}
+InstaBlog
+{% endblock %}
+
+{% block content %}
+<p class='text-4xl text-center'>Welome to  InstaBlog Website</p>
+
+<button type="button" class="text-white bg-[#4285F4] hover:bg-[#4285F4]/90 focus:ring-4 focus:outline-none focus:ring-[#4285F4]/50 font-medium rounded-lg text-sm px-5 py-2.5 text-center inline-flex items-center dark:focus:ring-[#4285F4]/55 me-2 mb-6">
+<a href="{% url 'blog_create' %}">Create a Blog</a>
+</button>
+<div class="container flex gap-3">
+    {% for blog in blogs %}
+    <div class="max-w-sm bg-white border border-gray-200 rounded-lg shadow dark:bg-gray-800 dark:border-gray-700">
+        <a href="#">
+            <img class="rounded-t-lg" src="{{blog.photo.url}}" alt="" />
+        </a>
+        <div class="p-5">
+            <a href="#">
+                <h5 class="mb-2 text-lg font-bold tracking-tight text-gray-900 dark:text-white">{{blog.user.username}}</h5>
+            </a>
+            <p class="mb-3 font-normal text-gray-700 dark:text-gray-400">{{blog.blog}}</p>
+            {% if blog.user == user %}
+            <a href="{% url 'blog_edit' blog.id %}" class="inline-flex items-center px-3 py-2 text-sm font-medium text-center text-white bg-blue-700 rounded-lg hover:bg-blue-800 focus:ring-4 focus:outline-none focus:ring-blue-300 dark:bg-blue-600 dark:hover:bg-blue-700 dark:focus:ring-blue-800">
+                Edit
+            </a>
+            <a href="{% url 'blog_delete' blog.id %}" class="inline-flex items-center px-3 py-2 text-sm font-medium text-center text-white bg-red-700 rounded-lg hover:bg-red-800 focus:ring-4 focus:outline-none focus:ring-red-300 dark:bg-red-600 dark:hover:bg-red-700 dark:focus:ring-red-800">
+                Delete
+            </a>
+            {% endif %}
+        </div>
+    </div>
+    {% endfor %}
+</div>
+
+{% endblock  %}

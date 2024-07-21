@@ -1,0 +1,17 @@
+{% extends "layout.html" %}
+
+{% block title %}
+InstaBlog
+{% endblock %}
+
+{% block content %}
+<p class="text-2xl">Register Form</p>
+<form method="post" class="space-y-3">
+    {% csrf_token %}
+    {{form.as_p}}
+    <button type="submit" class="text-gray-900 bg-white border border-gray-300 focus:outline-none hover:bg-gray-100 focus:ring-4 focus:ring-gray-100 font-medium rounded-lg text-sm px-3 py-2 dark:bg-gray-800 dark:text-white dark:border-gray-600 dark:hover:bg-gray-700 dark:hover:border-gray-600 dark:focus:ring-gray-700">
+        Register
+    </button>
+</form>
+<p>Already have an account? <a href="{% url 'login' %}">Login here</a></p>
+{% endblock  %}

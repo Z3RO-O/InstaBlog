@@ -1,0 +1,103 @@
+# Byte-compiled / optimized / DLL files
+__pycache__/
+*.py[cod]
+*$py.class
+
+# Django specific
+*.log
+*.pot
+*.pyc
+*.pyo
+*.pyd
+*.sqlite3
+db.sqlite3
+
+# Django migrations
+**/migrations/
+
+# Environment variables
+# .env
+# *.env
+
+# Django static and media files
+staticfiles/
+media/
+
+# Ignore node_modules in case using npm/yarn for frontend
+node_modules/
+
+# Ignore frontend build files
+build/
+dist/
+
+# Ignore coverage reports
+htmlcov/
+.coverage
+.coverage.*
+.cache
+nosetests.xml
+coverage.xml
+*.cover
+*.py,cover
+
+# Ignore Jupyter Notebook checkpoints
+.ipynb_checkpoints
+
+# Ignore virtual environment folders
+.venv/
+env/
+venv/
+ENV/
+VENV/
+venv.bak/
+
+# Ignore mypy
+.mypy_cache/
+.dmypy.json
+dmypy.json
+
+# Docker related
+# Dockerfile
+# docker-compose.yml
+# .dockerignore
+# **/*.Dockerfile
+# **/docker-compose.*.yml
+# Ignore Docker logs and volumes
+logs/
+volumes/
+*.log
+
+# Ignore Python build files
+build/
+develop-eggs/
+dist/
+downloads/
+eggs/
+.eggs/
+lib/
+lib64/
+parts/
+sdist/
+var/
+wheels/
+*.egg-info/
+.installed.cfg
+*.egg
+
+# Ignore pip cache
+pip-log.txt
+pip-delete-this-directory.txt
+
+# PyCharm specific
+.idea/
+
+# VS Code specific
+.vscode/
+
+# macOS specific
+.DS_Store
+
+# Windows specific
+Thumbs.db
+ehthumbs.db
+Desktop.ini
